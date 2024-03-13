@@ -1,5 +1,6 @@
 // Copyright 2021 NNTU-CS
 #include <cstdint>
+
 int cbinsearch(int *arr, int size, int value) {
     uint64_t left = 0;
     uint64_t right = size - 1;
