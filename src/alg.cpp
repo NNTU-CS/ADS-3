@@ -1,5 +1,4 @@
 // Copyright 2021 NNTU-CS
-
 #include <cstdint>
 int cbinsearch(int *arr, int size, int value) {
     uint64_t CountValue = 0;
