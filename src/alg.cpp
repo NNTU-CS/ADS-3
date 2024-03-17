@@ -1,13 +1,15 @@
 // Copyright 2021 NNTU-CS
-
-#include <cstdint>
-
 int cbinsearch(int *arr, int size, int value) {
-    uint64_t p = 0;
-    for (uint64_t i = 0; i < size; i++) {
-        if (arr[i] == value) {
-            p++;
+    int low = 0;
+    int left = 0;
+    int right = size - 1;
+    while (left <= right) {
+        int mid = (right + left) / 2;
+        if (arr[mid] == value) {
+            low++;
+            } else {
+                right = mid - 1;
+            }
         }
-    }
-    return p;
+        return low;
 }
