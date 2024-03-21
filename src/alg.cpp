@@ -2,21 +2,16 @@
 int cbinsearch(int* arr, int size, int value) {
   int left = 0, right = size - 1;
   int middle = (right - left) / 2, counter = 0;
-  int stop = 0;
   while (arr[middle] != value) {
     if (arr[middle] < value) {
-      right = middle;
-    } else if (arr[middle] > value) {
       left = middle;
+    } else if (arr[middle] > value) {
+      right = middle;
     }
     middle = (right - left) / 2;
     if (right - left <= 1) {
       counter -= 1;
       break;
-    }
-    stop += 1;
-    if (stop == 100) {
-        return 0;
     }
   }
   counter += 1;
