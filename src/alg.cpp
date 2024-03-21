@@ -1,3 +1,4 @@
+// Copyright 2021 NNTU-CS
 int cbinsearch(int* arr, int size, int value) {
   int left = 0, right = size - 1;
   int middle = (right - left) / 2, counter = 0;
@@ -15,7 +16,7 @@ int cbinsearch(int* arr, int size, int value) {
     }
     stop += 1;
     if (stop == 100) {
-	    return 0;
+        return 0;
     }
   }
   counter += 1;
