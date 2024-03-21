@@ -39,7 +39,7 @@ int cbinsearch(int* arr, int size, int value) {
     }
     index1 -= 1;
     index2 += 1;
-    if (!one and !two) {
+    if (!one && !two) {
       break;
     }
   }
