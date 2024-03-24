@@ -8,15 +8,15 @@ int cbinsearch(int *arr, int size, int value) {
       int mid = left + (right - left) / 2;
       if (arr[mid] == value) {
           count++;
-          int leftPos = mid - 1;
-          while (leftPos >= 0 && arr[leftPos] == value) {
+          int i = mid - 1;
+          while (i >= 0 && arr[i] == value) {
               count++;
-              leftPos--;
+              i--;
            }
-          int rightPos = mid + 1;
-          while (rightPos < size && arr[rightPos] == value) {
+          i = mid + 1;
+          while (i < size && arr[i] == value) {
               count++;
-              rightPos++;
+              i++;
           }
           return count;
       } 
