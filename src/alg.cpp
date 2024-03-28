@@ -20,12 +20,10 @@ int cbinsearch(int *arr, int size, int value) {
       }
       return count;
     }
-    else if (arr[mid] < value) {
+    else if (arr[mid] < value)
       left = mid + 1;
-    }
-    else {
+    else
       right = mid - 1;
-    }
   }
   return 0; // если ничего не найдено
 }
