@@ -3,16 +3,16 @@
 #include "alg.h"
 
 uint64_t collatzMaxValue(uint64_t num) {
-  unsigned int length = 0;
+  uint64_t maxVal = num;
     while (num != 1) {
         if (num % 2 == 0) {
             num /= 2;
         } else {
             num = 3 * num + 1;
         }
-        length++;
+        maxVal = std::max(maxVal, num);
     }
-    return length + 1;
+    return maxVal;
 }
 
 unsigned int collatzLen(uint64_t num) {
