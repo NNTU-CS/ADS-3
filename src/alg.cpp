@@ -6,21 +6,17 @@ uint64_t collatzMaxValue(uint64_t num) {
   uint64_t max = 0;
   while (num > 1) {
     if (num % 2 == 0) {
-      if ((num / 2) > max)
-      {
+      if ((num / 2) > max) {
         max = num / 2;
         num = max;
-      }
-      else {
+      } else {
         num /= 2;
       }
-    }
-    else {
+    } else {
       if ((3 * num + 1) > max) {
         max = 3 * num + 1;
         num = max;
-      }
-      else {
+      } else {
         num = 3 * num + 1;
       }
     }
