@@ -48,3 +48,4 @@ unsigned int seqCollatz(unsigned int *maxlen,
   *maxlen = MaxLenght;
   return numMaxLenght;
 }
+
