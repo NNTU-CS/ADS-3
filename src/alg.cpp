@@ -14,7 +14,8 @@ unsigned int collatzLen(uint64_t num) {
   return kol;
 }
 
-unsigned int seqCollatz(unsigned int* maxlen, uint64_t lbound, uint64_t rbound) {
+unsigned int seqCollatz(unsigned int* maxlen, uint64_t lbound, \
+  uint64_t rbound) {
   *maxlen = 0;
   unsigned int num = 0;
 
@@ -23,7 +24,7 @@ unsigned int seqCollatz(unsigned int* maxlen, uint64_t lbound, uint64_t rbound) 
   }
 
   for (uint64_t i = lbound; i <= rbound; ++i) {
-    unsigned int len_seq = CollatzLen(i);
+    unsigned int len_seq = collatzLen(i);
     if (*maxlen <= len_seq) {
       *maxlen = len_seq;
       num = i;
