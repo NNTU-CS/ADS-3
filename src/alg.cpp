@@ -3,7 +3,7 @@
 #include "alg.h"
 
 unsigned int collatzLen(uint64_t num) {
-  unsigned int kol = 0;
+  unsigned int kol = 1;
   for (uint64_t j = num; j != 1; ++kol) {
     if (j % 2 == 0) {
       j /= 2;
