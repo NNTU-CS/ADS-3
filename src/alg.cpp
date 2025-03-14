@@ -42,6 +42,6 @@ unsigned int seqCollatz(unsigned int *maxlen,
       numMaxLenght = i;
     }
   }
-  *maxlen = maxLength
+  *maxlen = maxLength;
   return numMaxLenght;
 }
