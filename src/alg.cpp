@@ -6,7 +6,7 @@ uint64_t edit_num(uint64_t num) {
   if (num % 2 == 0) {
     return num /= 2;
   }
-  
+
   return num = num * 3 + 1;
 }
 
@@ -35,8 +35,7 @@ unsigned int collatzLen(uint64_t num) {
 
 unsigned int seqCollatz(unsigned int* maxlen,
   uint64_t lbound,
-  uint64_t rbound) {
-  
+  uint64_t rbound) { 
   uint64_t max_length = 0;
   uint64_t res_num = 0;
   for (uint64_t i = lbound; i <= rbound; ++i) {
