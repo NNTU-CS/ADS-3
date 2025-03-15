@@ -1,16 +1,14 @@
 // Copyright 2025 NNTU-CS
+#include <alg.h>
 #include <iostream>
 #include <cstdint>
-#include <alg.h>
-using namespace std;
 
 uint64_t collatzMaxValue(uint64_t num) {
     uint64_t maxVal = num;
     while (num != 1) {
         if (num % 2 == 0) {
             num /= 2;
-        }
-        else {
+        } else {
             num = 3 * num + 1;
         }
         if (num > maxVal) { 
