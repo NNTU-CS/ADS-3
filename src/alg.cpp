@@ -19,11 +19,11 @@ uint64_t collatzMaxValue(uint64_t num) {
 
 unsigned int collatzLen(uint64_t num) {
   unsigned int len = 1;
-  while (n != 1) {
-    if (n % 2 == 0) {
-      n /= 2;
+  while (num != 1) {
+    if (num % 2 == 0) {
+      num /= 2;
     } else {
-      n = 3 * n + 1;
+      num = 3 * num + 1;
     }
     len++;
   }
