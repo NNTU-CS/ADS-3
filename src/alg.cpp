@@ -10,7 +10,7 @@ uint64_t collatzMaxValue(uint64_t num) {
         }
         if (num % 2 == 0) {
             num /= 2;
-        } else{
+        } else {
             num = 3 * num + 1;
         }
     }
