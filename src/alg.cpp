@@ -43,17 +43,18 @@ unsigned int collatzLen(uint64_t initialNum) {
 unsigned int seqCollatz(unsigned int* maxLengthPtr,
                       uint64_t lowerBound,
                       uint64_t upperBound) {
-  unsigned int longestStart = lowerBound;
-  unsigned int currentLength = 0;
+  uint64_t longestStart = lowerBound;
   *maxLengthPtr = 0;
 
-  for (uint64_t currentNum = lowerBound; currentNum <= upperBound; currentNum++) {
-    currentLength = collatzLen(currentNum);
+  for (uint64_t currentNum = lowerBound;
+       currentNum <= upperBound;
+       currentNum++) {
+    unsigned int currentLength = collatzLen(currentNum);
     if (currentLength > *maxLengthPtr) {
       *maxLengthPtr = currentLength;
-      longestStart = (unsigned int)currentNum;
+      longestStart = currentNum;
     }
-  }
+       }
 
   return longestStart;
 }
