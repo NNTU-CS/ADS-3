@@ -41,5 +41,5 @@ uint64_t lbound, uint64_t rbound) {
       numbb = i;
     }
   }
-  return num;
+  return numbb;
 }
