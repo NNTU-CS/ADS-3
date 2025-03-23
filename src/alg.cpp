@@ -14,6 +14,7 @@ uint64_t collatzMaxValue(uint64_t num) {
             }
         }
     }
+    return maxValue;
 }
 
 unsigned int collatzLen(uint64_t num) {
