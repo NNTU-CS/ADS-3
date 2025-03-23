@@ -2,16 +2,17 @@
 #include <cstdint>
 #include "alg.h"
 
-std::unordered_map<uint64_t, unsigned int> collatz_cache;
-
 unsigned int collatzLen(uint64_t num) {
-  if (num == 1) return 1;
-  if (collatz_cache.find(num) != collatz_cache.end()) {
-    return collatz_cache[num];
+  unsigned int length = 1;
+  while (num != 1) {
+    if (num % 2 == 0) {
+      num /= 2;
+    } else {
+      num = 3 * num + 1;
+    }
+    length++;
+    return length;
   }
-  unsigned int length = 1 + (num % 2 == 0 ? collatzLen(num / 2) : collatzLen(3 * num + 1));
-  collatz_cache[num] = length;
-  return length;
 }
 
 uint64_t collatzMaxValue(uint64_t num) {
