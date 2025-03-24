@@ -19,8 +19,7 @@ unsigned int collatzLen(uint64_t num) {
   unsigned int len = 1;
   while (num != 1) {
     len++;
-    if (num % 2 == 1) 
-    {
+    if (num % 2 == 1) {
       num = num * 3 + 1;
     } else {
       num /= 2;
@@ -33,7 +32,7 @@ unsigned int seqCollatz(unsigned int* maxlen,
   uint64_t lbound,
   uint64_t rbound) {
   uint64_t number = 0;
-  *maxlen=2;
+  *maxlen = 2;
   for (int i = lbound; i <= rbound; i++) {
     unsigned int len = collatzLen(i);
     if (len > *maxlen) {
