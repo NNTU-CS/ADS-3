@@ -26,7 +26,7 @@ unsigned int collatzLen(uint64_t num) {
       num = 3 * num + 1;
     }
     len++;
-  }  
+  }
   return len;
 }
 
