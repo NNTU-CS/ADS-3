@@ -17,6 +17,7 @@ unsigned int collatzLen(uint64_t num) {
   while (num != 1) {
     num = (num % 2 == 0) ? num / 2 : 3 * num + 1;
     ++lenght;
+  }
   return lenght;
 }
 
@@ -25,7 +26,7 @@ unsigned int seqCollatz(unsigned int *maxlen,
                         uint64_t rbound) {
   unsigned int maxNamber = 0;
   *maxlen = 0;
-  for(uint64_t i = lbound; i <= rbound; ++i) {
+  for (uint64_t i = lbound; i <= rbound; ++i) {
     unsigned int lenght = collatzLen(i);
     *maxlen = lenght;
     maxNamber = i;
