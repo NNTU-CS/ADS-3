@@ -1,8 +1,8 @@
 // Copyright 2025 NNTU-CS
 #include <cstdint>
 #include <algorithm>
-#include "alg.h"
 #include <iostream>
+#include "alg.h"
 
 unsigned int collatzLen(uint64_t num) {
   unsigned int len = 1;
