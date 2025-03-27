@@ -27,9 +27,11 @@ unsigned int seqCollatz(unsigned int *maxlen,
   unsigned int maxNamber = 0;
   *maxlen = 0;
   for (uint64_t i = lbound; i <= rbound; ++i) {
-    unsigned int lenght = collatzLen(i);
-    *maxlen = lenght;
-    maxNamber = i;
+    unsigned int length = collatzLen(i);
+    if (length > *maxlen) {
+      *maxlen = length;
+      maxNumber = i;
+    }
   }
   return maxNamber;
 }
