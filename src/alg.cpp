@@ -33,5 +33,5 @@ unsigned int seqCollatz(unsigned int *maxlen,
       maxNumber = i;
     }
   }
-  return maxNamber;
+  return maxNumber;
 }
