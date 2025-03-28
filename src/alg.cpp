@@ -20,7 +20,7 @@ uint64_t collatzMaxValue(uint64_t num) {
 unsigned int collatzLen(uint64_t num) {
   uint64_t lenght = 0;
   while (num != 1) {
-    lenght ++;
+    lenght++;
     if (num % 2 == 0) {
       num /= 2;
     } else {
@@ -42,7 +42,6 @@ unsigned int seqCollatz(unsigned int *maxlen,
       maxNum = num;
     }
   }
-  *maxlen = maxLength;
+  maxlen = maxLength;
   return result;
-  
 }
