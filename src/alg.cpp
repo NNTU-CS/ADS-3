@@ -24,12 +24,12 @@ unsigned int collatzLen(uint64_t num) {
     }
 
     unsigned int length = 1 + collatzLen(
-        num % 2 == 0 ? num / 2 : 3 * num + 1
-    );
+        num % 2 == 0 ? num / 2 : 3 * num + 1);
     return length;
 }
 
-unsigned int seqCollatz(unsigned int *maxlen, uint64_t lbound, uint64_t rbound) {
+unsigned int seqCollatz(unsigned int *maxlen, uint64_t lbound,
+                        uint64_t rbound) {
     unsigned int longestNum = 0;
     *maxlen = 0;
 
