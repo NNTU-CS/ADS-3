@@ -8,8 +8,7 @@ uint64_t collatzMaxValue(uint64_t num) {
   while (OrdinaryValue != 1) {
     if (OrdinaryValue % 2 == 0) {
       OrdinaryValue = OrdinaryValue / 2;
-    }
-    else {
+    } else {
       OrdinaryValue = OrdinaryValue * 3 + 1;
     }
     if (MaxValue < OrdinaryValue) {
@@ -25,8 +24,7 @@ unsigned int collatzLen(uint64_t num) {
   while (OrdinaryValue != 1) {
     if (OrdinaryValue % 2 == 0) {
       OrdinaryValue = OrdinaryValue / 2;
-    }
-    else {
+    } else {
       OrdinaryValue = OrdinaryValue * 3 + 1;
     }
     Len += 1;
