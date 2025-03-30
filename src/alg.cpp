@@ -3,15 +3,47 @@
 #include "alg.h"
 
 uint64_t collatzMaxValue(uint64_t num) {
-  return 1;
+  uint64_t mx = num;
+    while (num != 1) {
+        if (num > mx) {
+            mx = num;
+        }
+        if (num % 2 == 0) {
+            num /= 2;
+        } else {
+            num = 3 * num + 1;
+        }
+    }
+    return mx;
 }
 
 unsigned int collatzLen(uint64_t num) {
-  return 1;
+  unsigned int len = 0;
+    while (num != 1) {
+        len++;
+        if (num % 2 == 0) {
+            num /= 2;
+        } else {
+            num = 3 * num + 1;
+        }
+    }
+
+    len++;
+    return len;
 }
 
 unsigned int seqCollatz(unsigned int *maxlen,
                         uint64_t lbound,
                         uint64_t rbound) {
-  return 1;
+  unsigned int numberWithMaxLen = 0;
+    *maxlen = 0;
+
+    for (uint64_t num = lbound; num <= rbound; ++num) {
+        unsigned int currentLen = collatzLen(num);
+        if (currentLen > *maxlen) {
+            *maxlen = currentLen;
+            numberWithMaxLen = static_cast<unsigned int>(num);
+        }
+    }
+    return numberWithMaxLen;
 }
