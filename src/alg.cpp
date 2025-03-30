@@ -25,7 +25,6 @@ unsigned int collatzLen(uint64_t num) {
         } else {
             num = 3 * num + 1;
         }
-        cout << num << " ";
         len++;
     }
     return len;
