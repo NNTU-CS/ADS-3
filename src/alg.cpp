@@ -1,3 +1,4 @@
+// Copyright 2025 NNTU-CS
 #include <iostream>
 #include <cstdint>
 
@@ -29,8 +30,8 @@ uint64_t collatzMaxValue(uint64_t num) {
   return maxVal;
 }
 
-unsigned int seqCollatz(unsigned int *maxlen, uint64_t lbound, 
-uint64_t rbound) {
+unsigned int seqCollatz(unsigned int *maxlen, uint64_t lbound, uint64_t rbound)
+{
   unsigned int longestLen = 0;
   uint64_t numberWithLongestSeq = 0;
 
@@ -50,12 +51,10 @@ int main() {
   unsigned int maxlen = 0;
   uint64_t lbound = 2;
   uint64_t rbound = 1000000;
-
   uint64_t resultNum = seqCollatz(&maxlen, lbound, rbound);
   std::cout << resultNum << "\n";
   std::cout << maxlen << "\n";
-  std::cout 
-    << collatzMaxValue(resultNum) << "\n";
+  std::cout << collatzMaxValue(resultNum) << "\n";
 
   return 0;
 }
