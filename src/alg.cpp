@@ -2,7 +2,9 @@
 #include <cstdint>
 #include "alg.h"
 
-unsigned int seqCollatz(unsigned int* maxlen, uint64_t lbound, uint64_t rbound) {
+unsigned int seqCollatz(unsigned int* maxlen, 
+                        uint64_t lbound, 
+                        uint64_t rbound) {
   unsigned int longest_len = 0;
   unsigned int max_num = lbound;
 
