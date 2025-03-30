@@ -2,7 +2,7 @@
 #include <cstdint>
 #include "alg.h"
 
-uint64_t CollatzMaxValue(uint64_t num) {
+uint64_t collatzMaxValue(uint64_t num) {
     uint64_t max_val = num;
     while (num != 1) {
         if (num % 2 == 0) {
@@ -17,7 +17,7 @@ uint64_t CollatzMaxValue(uint64_t num) {
     return max_val;
 }
 
-unsigned int CollatzLen(uint64_t num) {
+unsigned int collatzLen(uint64_t num) {
     unsigned int length = 1;
     while (num != 1) {
         if (num % 2 == 0) {
@@ -30,12 +30,13 @@ unsigned int CollatzLen(uint64_t num) {
     return length;
 }
 
-unsigned int SeqCollatz(unsigned int* max_len, uint64_t lbound, uint64_t rbound) {
+unsigned int seqCollatz(
+    unsigned int* max_len, uint64_t lbound, uint64_t rbound) {
     unsigned int best_num = 0;
     unsigned int best_len = 0;
 
     for (uint64_t i = lbound; i <= rbound; ++i) {
-        unsigned int len = CollatzLen(i);
+        unsigned int len = collatzLen(i);
         if (len > best_len) {
             best_len = len;
             best_num = i;
