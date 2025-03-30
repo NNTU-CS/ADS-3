@@ -23,7 +23,9 @@ unsigned int collatzLen(uint64_t num) {
         return 1;
     }
 
-    unsigned int length = 1 + collatzLen(num % 2 == 0 ? num / 2 : 3 * num + 1);
+    unsigned int length = 1 + collatzLen(
+        num % 2 == 0 ? num / 2 : 3 * num + 1
+    );
     return length;
 }
 
