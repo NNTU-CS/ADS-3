@@ -3,16 +3,13 @@
 #include "alg.h"
 
 uint64_t collatzMaxValue(uint64_t num) {
-  unsigned int count = 0;
-  while (num > 1) {
-    if (num % 2 == 0) {
-      num = num / 2;
-    } else {
-      num = num * 3 + 1;
-    }
-    count++;
+  unsigned int steps = 1;
+  while (num != 1) {
+    bool even = (num % 2 == 0);
+    num = even ? num / 2 : num * 3 + 1;
+    steps += 1;
   }
-  return count;
+  return steps;
 }
 
 unsigned int collatzLen(uint64_t num) {
@@ -21,7 +18,7 @@ unsigned int collatzLen(uint64_t num) {
     if (num & 1) {
       num = num * 3 + 1;
     } else {
-      num /= 2;
+      num >>= 1;
     }
     if (num > maxV)
       maxV = num;
