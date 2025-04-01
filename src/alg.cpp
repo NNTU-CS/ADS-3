@@ -3,7 +3,7 @@
 #include "alg.h"
 
 uint64_t collatzMaxValue(uint64_t num) {
-  uint64_t maxim = 0;
+  uint64_t maxim = num;
   while (num != 1) {
     if (num % 2) {
       num = 3 * num + 1;
