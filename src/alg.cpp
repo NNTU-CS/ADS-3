@@ -20,7 +20,7 @@ unsigned int collatzLen(uint64_t num) {
     } else {
       num = num / 2;
     }
-    if (num > maxVal) {
+    if (num > maxV) {
       maxV = num;
     }
   }
