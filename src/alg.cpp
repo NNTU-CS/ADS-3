@@ -1,7 +1,6 @@
 // Copyright 2025 NNTU-CS
 #include <cstdint>
 #include "alg.h"
-
 uint64_t collatzMaxValue(uint64_t num) {
   if (num == 0) {
     return 0;
@@ -13,14 +12,12 @@ uint64_t collatzMaxValue(uint64_t num) {
     } else {
       num = 3 * num + 1;
     }
-    
     if (num > maxVal) {
       maxVal = num;
     }
   }
   return maxVal;
 }
-
 unsigned int collatzLen(uint64_t num) {
   if (num == 0) {
     return 0;
@@ -36,7 +33,6 @@ unsigned int collatzLen(uint64_t num) {
   }
   return length;
 }
-
 unsigned int seqCollatz(unsigned int *maxlen,
                        uint64_t lbound,
                        uint64_t rbound) {
@@ -44,14 +40,12 @@ unsigned int seqCollatz(unsigned int *maxlen,
     if (maxlen) *maxlen = 0;
     return 0;
   }
-
   unsigned int maxLength = 0;
   unsigned int resultNum = lbound;
 
   for (uint64_t num = lbound; num <= rbound; ++num) {
     uint64_t current = num;
     unsigned int currentLength = 1;
-
     while (current != 1) {
       if (current % 2 == 0) {
         current /= 2;
@@ -60,7 +54,6 @@ unsigned int seqCollatz(unsigned int *maxlen,
       }
       ++currentLength;
     }
-
     if (currentLength > maxLength) {
       maxLength = currentLength;
       resultNum = num;
