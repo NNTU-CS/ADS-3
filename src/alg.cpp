@@ -3,7 +3,16 @@
 #include "alg.h"
 
 uint64_t collatzMaxValue(uint64_t num) {
-  return 1;
+  unsigned int length = 1;
+  while (num != 1) {
+    if (num%2 == 0) {
+      num /= 2;
+    } else {
+      num = 3 * num + 1;
+    }
+    length++;
+  }
+  return length;
 }
 
 unsigned int collatzLen(uint64_t num) {
