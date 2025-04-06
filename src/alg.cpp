@@ -18,7 +18,7 @@ unsigned int collatzLen(uint64_t num) {
         num = (num % 2 == 0) ? num / 2 : (3 * num + 1);
         length++;
     }
-    return length + 1; // Добавляем 1, чтобы учесть начальное значение
+    return length + 1;
 }
 
 unsigned int seqCollatz(unsigned int *maxlen, uint64_t lbound, uint64_t rbound) {
