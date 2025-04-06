@@ -2,18 +2,19 @@
 #include <cstdint>
 
 uint64_t collatzMaxValue(uint64_t num) {
-    uint64_t maxVal = num;
-    while (num != 1) {
-        if (num % 2 == 0) {
-            num /= 2;
-        } else {
-            num = 3 * num + 1;
-        }
-        if (num > maxVal) {
-            maxVal = num;
+    uint64_t max_val = num;
+
+    while (true) {
+        if (num == 1) break;
+
+        num = (num % 2 == 0) ? (num / 2) : (3 * num + 1);
+
+        if (num > max_val) {
+            max_val = num;
         }
     }
-    return maxVal;
+
+    return max_val;
 }
 
 unsigned int collatzLen(uint64_t num) {
