@@ -1,6 +1,7 @@
 // Copyright 2025 NNTU-CS
 #include <cstdint>
 #include "alg.h"
+
 uint64_t collatzMaxValue(uint64_t num) {
   uint64_t highpoint = num;
   while (num != 1){
