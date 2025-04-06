@@ -32,6 +32,7 @@ unsigned int seqCollatz(unsigned int *maxlen, uint64_t lbound, uint64_t rbound) 
             numberWithLongestSeq = i;
         }
     }
+
     *maxlen = longestLength;
     return numberWithLongestSeq;
 }
