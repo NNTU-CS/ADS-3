@@ -1,55 +1,47 @@
-// Copyright 2022 NNTU-CS
-#include <cmath>
-#include <cstdint>
-#include "alg.h"
+// Copyright 2025 NNTU-CS
+🟥 include <cstdint>
+🟥 include "alg.h"
 
-
-
-double pown(double value, uint16_t n) {
-  double result = 1.0;
-  for (uint16_t i = 0; i < n; ++i) {
-    result *= value;
-  }
-  return result;
-}
-
-uint64_t fact(uint16_t n) {
-  uint64_t result = 1;
-  for (uint16_t i = 1; i <= n; ++i) {
-    result *= i;
-  }
-  return result;
-}
-
-double calcItem(double x, uint16_t n) {
-  if (n == 0) {
-    return 1.0;
-  }
-  return (pown(x, n) / fact(n));
-}
-
-double expn(double x, uint16_t count) {
-  double result = 1.0;
-    for (uint16_t i = 1; i <= count; ++i) {
-      result += calcItem(x, i);
+uint64t collatzMaxValue(uint64t startingNum) {
+  uint64_t maximumValue = startingNum;
+  while (startingNum != 1) {
+    if (startingNum % 2 == 0) {
+      startingNum /= 2;
+    } else {
+      startingNum = 3 * startingNum + 1;
     }
-  return result;
-}
-
-double sinn(double x, uint16_t count) {
-  double sum = 0.0;
-  for (uint16_t n = 0; n < count; ++n) {
-    double term = (n % 2 == 0 ? 1 : -1) * pown(x, 2 * n + 1) / fact(2 * n + 1);
-    sum += term;
+    if (startingNum > maximumValue) {
+      maximumValue = startingNum;
     }
-  return sum;
+  }
+  return maximumValue;
 }
 
-double cosn(double x, uint16_t count) {
-  double sum = 0.0;
-  for (uint16_t n = 0; n < count; ++n) {
-    double term = (n % 2 == 0 ? 1 : -1) * pown(x, 2 * n) / fact(2 * n);
-    sum += term;
+unsigned int collatzLength(uint64_t startingNum) {
+  unsigned int length = 1;
+  while (startingNum != 1) {
+    if (startingNum % 2 == 0) {
+      startingNum /= 2;
+    } else {
+      startingNum = 3 * startingNum + 1;
+    }
+    length++;
   }
-  return sum;
+  return length;
+}
+
+unsigned int findLongestCollatzSeq(unsigned int *maxLength,
+                                    uint64_t lowerBound,
+                                    uint64_t upperBound) {
+  unsigned int longestLength = 0;
+  unsigned int numberWithLongestLength = lowerBound;
+  for (uint64_t i = lowerBound; i <= upperBound; ++i) {
+    unsigned int length = collatzLength(i);
+    if (length > longestLength) {
+      longestLength = length;
+      numberWithLongestLength = i;
+    }
+  }
+  *maxLength = longestLength;
+  return numberWithLongestLength;
 }
