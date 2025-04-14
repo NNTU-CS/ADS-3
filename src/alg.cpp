@@ -27,7 +27,9 @@ uint64_t CollatzMaxValue(uint64_t num) {
   return max_val;
 }
 
-unsigned int SeqCollatz(unsigned int* maxlen, uint64_t lbound, uint64_t rbound) {
+unsigned int SeqCollatz(unsigned int* maxlen,
+                        uint64_t lbound,
+                        uint64_t rbound) {
   unsigned int max_length = 0;
   unsigned int result_num = 0;
 
@@ -35,7 +37,8 @@ unsigned int SeqCollatz(unsigned int* maxlen, uint64_t lbound, uint64_t rbound) 
     unsigned int length = CollatzLen(i);
     if (length > max_length) {
       max_length = length;
-      result_num = static_cast<unsigned int>(i);
+      result_num =
+        static_cast<unsigned int>(i);
     }
   }
 
