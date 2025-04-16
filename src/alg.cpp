@@ -4,7 +4,7 @@
 
 uint64_t collatzMaxValue(uint64_t num) {
   uint64_t resul = num;
-    while (num != 1) {
+  while (num != 1) {
         if (num % 2 != 0) {
             num = 3 * num + 1;
         } else {
