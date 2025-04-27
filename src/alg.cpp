@@ -2,7 +2,7 @@
 #include <cstdint>
 #include "alg.h"
 uint64_t collatzMaxValue(uint64_t n) {
- int64_t valu = 0;
+int64_t valu = 0;
   while (n != 1) {
     if (n > valu) {
       valu = n;
@@ -16,7 +16,7 @@ uint64_t collatzMaxValue(uint64_t n) {
   return valu;
 }
 unsigned int collatzLen(uint64_t n) {
- int64_t k = 1;
+int64_t k = 1;
   while (n != 1) {
     if (n % 2 == 0) {
       n /= 2;
