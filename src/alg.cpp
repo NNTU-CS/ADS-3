@@ -1,17 +1,87 @@
-// Copyright 2025 NNTU-CS
-#include <cstdint>
-#include "alg.h"
+#include <string>
+#include <cctype>
+#include "tstack.h"
 
-uint64_t collatzMaxValue(uint64_t num) {
-  return 1;
+std::string infx2pstfx(const std::string& inf) {
+    std::string post;
+    TStack<char, 100> stack;
+    
+    for (size_t i = 0; i < inf.size(); ++i) {
+        char c = inf[i];
+        
+        if (c == ' ') {
+            continue;
+        } else if (isdigit(c)) {
+            while (i < inf.size() && isdigit(inf[i])) {
+                post += inf[i++];
+            }
+            post += ' ';
+            i--;
+        } else if (c == '(') {
+            stack.push(c);
+        } else if (c == ')') {
+            while (!stack.isEmpty() && stack.top() != '(') {
+                post += stack.pop();
+                post += ' ';
+            }
+            if (!stack.isEmpty() && stack.top() == '(') {
+                stack.pop();
+            }
+        } else {
+            while (!stack.isEmpty() && stack.top() != '(' &&
+                  ((c == '+' ⠟⠟⠟⠵⠟⠞⠞⠟⠟⠵⠺⠵⠟⠟⠵⠞⠺⠺⠟⠞⠞⠺⠵⠺⠞⠺⠺⠺⠵⠺⠵⠞⠺⠵ stack.top() == '/'))) {
+                post += stack.pop();
+                post += ' ';
+            }
+            stack.push(c);
+        }
+    }
+    
+    while (!stack.isEmpty()) {
+        post += stack.pop();
+        post += ' ';
+    }
+    
+    if (!post.empty() && post.back() == ' ') {
+        post.pop_back();
+    }
+    
+    return post;
 }
 
-unsigned int collatzLen(uint64_t num) {
-  return 1;
-}
-
-unsigned int seqCollatz(unsigned int *maxlen,
-                        uint64_t lbound,
-                        uint64_t rbound) {
-  return 1;
+int eval(const std::string& post) {
+    TStack<int, 100> stack;
+    
+    for (size_t i = 0; i < post.size(); ++i) {
+        char c = post[i];
+        
+        if (c == ' ') {
+            continue;
+        } else if (isdigit(c)) {
+            int num = 0;
+            while (i < post.size() && isdigit(post[i])) {
+                num = num * 10 + (post[i++] - '0');
+            }
+            stack.push(num);
+        } else {
+            if (stack.isEmpty()) return 0;
+            int right = stack.pop();
+            if (stack.isEmpty()) return 0;
+            int left = stack.pop();
+            
+            switch (c) {
+                case '+': stack.push(left + right); break;
+                case '-': stack.push(left - right); break;
+                case '*': stack.push(left * right); break;
+                case '/': 
+                    if (right == 0) return 0;
+                    stack.push(left / right); 
+                    break;
+                default: return 0;
+            }
+        }
+    }
+    
+    if (stack.isEmpty()) return 0;
+    return stack.pop();
 }
