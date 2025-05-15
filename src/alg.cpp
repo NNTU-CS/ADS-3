@@ -42,4 +42,3 @@ unsigned int seqCollatz(unsigned int *maxlen, uint64_t lbound, uint64_t rbound) 
   if (maxlen) *maxlen = maxLength;
   return resultNum;
 }
-
