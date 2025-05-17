@@ -2,9 +2,6 @@
 #include <cstdint>
 #include "alg.h"
 
-// Copyright 2025 NNTU-CS
-#include <cstdint>
-
 unsigned int collatzLen(uint64_t num) {
   int length = 1;
   while (num != 1) {
